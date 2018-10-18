@@ -7,5 +7,10 @@
 
 
 
+
 // DOCUMENT READY FUNCTION BELOW
 
+$("#shoot").click(function() {
+    $("#userChoice").text($("#input").val());
+
+});
