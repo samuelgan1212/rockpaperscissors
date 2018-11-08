@@ -17,7 +17,7 @@ $("#shoot").click(function() {
      randomNumber=Math.random();
      userChoice=$("#input").val();
     $("#userChoice").text(userChoice);
-    alert(randomNumber);
+
    
     if(randomNumber>0.6 && randomNumber<1) {
          computerChoice="scissors" 
@@ -29,7 +29,25 @@ $("#shoot").click(function() {
          computerChoice="rock"
     }
     
+    if(userChoice===computerChoice){
+        $("#result").text("Tie, Try again"); 
+    }
+    else if( (userChoice==="scissors"&&computerChoice==="paper" )||
+    ( userChoice==="rock"&&computerChoice==="paper")||
+    ( userChoice==="paper"&&computerChoice==="rock")){
+        $("#result").text("User Win"); 
+    }
+    else if((userChoice==="paper"&&computerChoice==="scissors" )||
+    (userChoice==="rock"&&computerChoice==="paper" )||
+    (userChoice==="scissors"&&computerChoice==="rock" ))
+    {
+         $("#result").text("Computer Win"); 
+    }
+    else{
+        $("#result").text("Please check your answer and enter it again"); 
+    }
     $("#computerChoice").text(computerChoice);
+    $("#input").val("")
 });
 
 
